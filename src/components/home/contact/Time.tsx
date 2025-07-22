@@ -1,8 +1,13 @@
 "use client";
+import { cn } from "@/utils/cn";
 import React, { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 export const Time = () => {
   const [time, setTime] = useState<string>("");
+  const [showTime, setShowTime] = useState<boolean>(false);
+
+  const [ref, inView] = useInView();
 
   useEffect(() => {
     function updateTime() {
@@ -20,5 +25,19 @@ export const Time = () => {
     return () => clearInterval(interval);
   }, []);
 
-  return <span>{time}</span>;
+  useEffect(() => {
+    if (inView && !showTime) setShowTime(true);
+  }, [inView, showTime]);
+
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        "grid grid-rows-[0fr] transition-all duration-300",
+        showTime && "grid-rows-[1fr]",
+      )}
+    >
+      <span className="overflow-hidden">{time}</span>
+    </div>
+  );
 };
