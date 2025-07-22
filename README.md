@@ -27,8 +27,8 @@ This site showcases my work as a web developer, including my skills, projects, a
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/peterpacka/iampitr.dev.git
-   cd iampitr.dev
+   git clone https://github.com/peterpacka/iampitrdev.git
+   cd iampitrdev
    ```
 
 2. **Install dependencies:**
