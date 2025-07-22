@@ -32,7 +32,7 @@ export default function About() {
           together!
         </p>
       </div>
-      <div className="shrink-0">
+      <div className="shrink-0 select-none">
         <Image
           draggable={false}
           className="rounded-full max-md:size-42"

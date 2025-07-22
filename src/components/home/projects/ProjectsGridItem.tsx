@@ -27,7 +27,7 @@ export const ProjectsGridItem = ({ project }: { project: Project }) => {
 
   return (
     <div ref={ref} className="flex flex-col gap-4 p-5">
-      <div className="aspect-video">
+      <div className="aspect-video select-none">
         {project.github || project.live ? (
           <div
             onMouseEnter={() => setShowLinks(true)}

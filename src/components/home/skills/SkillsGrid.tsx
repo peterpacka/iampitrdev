@@ -7,7 +7,7 @@ import { SkillsGridItem } from "./SkillsGridItem";
 
 export const SkillsGrid = () => {
   return (
-    <div className="bg-navigation-border rounded-4xl">
+    <div className="bg-navigation-border rounded-4xl select-none">
       <ul className="flex flex-wrap justify-evenly gap-x-4 gap-y-2 p-6">
         {skills.map((skill, index) => (
           <li key={skill.name}>

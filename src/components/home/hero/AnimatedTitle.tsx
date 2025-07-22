@@ -26,7 +26,7 @@ export const AnimatedTitle = () => {
         transition={{ duration: 0.2, delay: 0.2 }}
         className="text-muted text-lg md:text-2xl lg:text-3xl"
       >
-        16-Year-Old Frontend Developer from Slovakia
+        16-year-old Frontend Developer from Slovakia
       </motion.p>
     </div>
   );
