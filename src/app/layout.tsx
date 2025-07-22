@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Roboto } from "next/font/google";
 import "@/styles/globals.css";
+import Script from "next/script";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -28,7 +29,6 @@ export const metadata: Metadata = {
     "frontend developer",
     "modern web applications",
   ],
-  themeColor: "#0ea5e9",
   openGraph: {
     title: "iampitr.dev — web developer",
     description:
@@ -38,6 +38,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#0ea5e9",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -45,7 +49,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} antialiased`}>{children}</body>
+      <body className={`${roboto.className} antialiased`}>
+        {children}
+        <Script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "7d607d8e41f845c2a009d72ec2add440"}'
+          strategy="afterInteractive"
+        />
+      </body>
     </html>
   );
 }
