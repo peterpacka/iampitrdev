@@ -30,7 +30,7 @@ export default function Contact() {
                   draggable={false}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-navigation-border flex w-full items-center justify-center gap-4 rounded-xl p-2 text-xl font-bold transition-all duration-150 select-none hover:-translate-y-0.5 md:text-2xl lg:text-3xl"
+                  className="bg-navigation-border ring-accent flex w-full items-center justify-center gap-4 rounded-xl p-2 text-xl font-bold outline-0 transition-all duration-150 select-none hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:ring-2 md:text-2xl lg:text-3xl"
                   href={social.link}
                 >
                   <img

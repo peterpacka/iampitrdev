@@ -80,7 +80,7 @@ export default function Navigation() {
         <div className="flex w-full items-center justify-between">
           <button
             onClick={() => scrollToId("hero")}
-            className="group relative flex items-center text-[2.2rem] font-black sm:text-[2.5rem]"
+            className="group relative flex items-center text-[2.2rem] font-black outline-0 focus-visible:-translate-y-0.5 focus-visible:scale-[1.02] sm:text-[2.5rem]"
           >
             iam
             <span className="text-accent">pitr</span>
@@ -99,10 +99,11 @@ export default function Navigation() {
               <li key={item.scrollToId}>
                 <button
                   className={cn(
-                    "hover:text-muted relative before:transition-all before:duration-150",
+                    "hover:text-muted focus-visible:text-muted relative outline-0 before:transition-all before:duration-150 focus-within:-translate-y-0.5",
                     activeSection === item.scrollToId &&
                       "text-muted before:bg-accent cursor-default before:absolute before:bottom-0 before:h-[0.15rem] before:w-full",
                   )}
+                  tabIndex={activeSection === item.scrollToId ? -1 : 0}
                   onClick={() => scrollToId(item.scrollToId)}
                 >
                   {item.name}
