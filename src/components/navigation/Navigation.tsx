@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Pitr } from "./Pitr";
 import { cn } from "@/utils/cn";
 import { MobileButton } from "./MobileButton";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import { useNavigation } from "./NavigationContext";
 
 interface NavItem {
   name: string;
@@ -33,14 +33,18 @@ const navItems: NavItem[] = [
 export default function Navigation() {
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
   const [showBorder, setShowBorder] = useState<boolean>(false);
+  const { activeSection, setActiveSection } = useNavigation();
 
   const isMobile = useIsMobile();
   const visibleMenu = showMobileMenu || !isMobile;
 
   const scrollToId = (id: string) => {
+    if (id === activeSection) return;
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(id);
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      if (showMobileMenu) setShowMobileMenu(false);
     }
   };
 
@@ -67,16 +71,19 @@ export default function Navigation() {
   return (
     <header
       className={cn(
-        "bg-background/50 fixed top-0 left-0 min-h-[4rem] w-full backdrop-blur-lg before:w-0 before:transition-all before:duration-500",
+        "fixed top-0 left-0 z-50 min-h-[4rem] w-full before:w-0 before:transition-all before:duration-500",
         showBorder &&
-          "before:bg-navigation-border before:absolute before:bottom-0 before:h-[0.15rem] before:w-full",
+          "before:bg-navigation-border bg-background/50 backdrop-blur-lg before:absolute before:bottom-0 before:h-[0.15rem] before:w-full",
       )}
     >
-      <nav className="mx-auto flex max-w-[87.5rem] items-center justify-between px-6 py-4 max-sm:flex-col md:px-10 lg:px-12">
+      <nav className="mx-auto flex max-w-[110rem] items-center justify-between px-6 py-4 max-sm:flex-col md:px-10 lg:px-12">
         <div className="flex w-full items-center justify-between">
-          <button className="relative flex items-center text-[2.2rem] font-black sm:text-[2.5rem]">
+          <button
+            onClick={() => scrollToId("hero")}
+            className="group relative flex items-center text-[2.2rem] font-black sm:text-[2.5rem]"
+          >
             iam
-            <Pitr />
+            <span className="text-accent">pitr</span>
           </button>
           <MobileButton
             onClick={() => {
@@ -87,11 +94,15 @@ export default function Navigation() {
           />
         </div>
         {visibleMenu && (
-          <ul className="flex items-center gap-x-8 gap-y-2 text-2xl max-sm:mt-5 max-sm:flex-col max-sm:text-center">
+          <ul className="flex items-center gap-x-8 gap-y-4 text-2xl max-sm:mt-5 max-sm:flex-col max-sm:text-center">
             {navItems.map((item) => (
-              <li className="transition-all duration-150" key={item.scrollToId}>
+              <li key={item.scrollToId}>
                 <button
-                  className="hover:text-muted hover:before:bg-accent relative before:absolute before:bottom-0 before:h-[0.15rem] before:w-full before:transition-all before:duration-150"
+                  className={cn(
+                    "hover:text-muted relative before:transition-all before:duration-150",
+                    activeSection === item.scrollToId &&
+                      "text-muted before:bg-accent cursor-default before:absolute before:bottom-0 before:h-[0.15rem] before:w-full",
+                  )}
                   onClick={() => scrollToId(item.scrollToId)}
                 >
                   {item.name}

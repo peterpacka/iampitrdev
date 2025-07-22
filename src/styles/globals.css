@@ -1,28 +1,28 @@
 @import "tailwindcss";
 
-:root {
+/* :root {
   /* Light theme colors */
-  --background: #ebecee; /* Very light gray instead of pure white */
-  --foreground: #0a0f1f; /* Dark navy for text on light bg */
-  --navigation-border: #d8d8d8;
+/* --background: #ebecee; /* Very light gray instead of pure white */
+/* --foreground: #0a0f1f; Dark navy for text on light bg */
+/* --navigation-border: #d8d8d8; */
+/* --accent: #3d8bff; Bright blue accent */
+/* --secondary: #1b6cf9; Deeper blue for hover */
+/* --highlight: #f89900; Warm orange for CTA */
+/* --muted: #4a6078; Muted gray-blue for secondary text */
+/* } */
+
+/* @media (prefers-color-scheme: dark) { */
+:root {
+  /* Dark theme colors */
+  --background: #0a0f1f; /* Dark navy background */
+  --foreground: #e0e6ed; /* Light gray text */
+  --navigation-border: #111a38;
   --accent: #3d8bff; /* Bright blue accent */
   --secondary: #1b6cf9; /* Deeper blue for hover */
-  --highlight: #f5a623; /* Warm orange for CTA */
-  --muted: #4a6078; /* Muted gray-blue for secondary text */
+  --highlight: #0f66ca; /* Warm orange for CTA */
+  --muted: #b0becf; /* Muted gray-blue for secondary text */
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark theme colors */
-    --background: #0a0f1f; /* Dark navy background */
-    --foreground: #e0e6ed; /* Light gray text */
-    --navigation-border: #111a38;
-    --accent: #3d8bff; /* Bright blue accent */
-    --secondary: #1b6cf9; /* Deeper blue for hover */
-    --highlight: #f5a623; /* Warm orange for CTA */
-    --muted: #b0becf; /* Muted gray-blue for secondary text */
-  }
-}
+/* } */
 
 @theme {
   --color-background: var(--background);
@@ -40,8 +40,14 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
 }
 
 button {
   cursor: pointer;
+}
+
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
 }

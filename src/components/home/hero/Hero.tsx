@@ -1,12 +1,14 @@
-import { Title } from "./Title";
+import { HeroInViewObserver } from "./HeroInViewObserver";
+import { AnimatedTitle } from "./AnimatedTitle";
 
 export default function Hero() {
   return (
-    <section className="flex min-h-[45rem] items-center justify-center">
-      <div className="space-y-1 text-center">
-        <Title />
-        <p className="text-2xl">16-Year-Old Frontend Developer from Slovakia</p>
-      </div>
+    <section
+      id="hero"
+      className="relative flex min-h-[100lvh] flex-col items-center justify-center gap-10 px-4"
+    >
+      <HeroInViewObserver />
+      <AnimatedTitle />
     </section>
   );
 }

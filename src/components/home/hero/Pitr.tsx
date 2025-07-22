@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 export const Pitr = () => {
   return (
-    <div className="text-accent flex items-center">
+    <div className="inline-flex items-center">
       {["p", "i", "t", "r"].map((letter, index) => (
         <motion.span
           key={index}
