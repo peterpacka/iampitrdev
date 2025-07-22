@@ -10,7 +10,7 @@ interface Props {
 export const MobileButton = ({ onClick, opened }: Props) => {
   return (
     <button
-      className="flex size-[48px] items-center justify-center sm:hidden"
+      className="flex size-[48px] items-center justify-center md:hidden"
       onClick={onClick}
       aria-label={opened ? "Close menu" : "Open menu"}
     >

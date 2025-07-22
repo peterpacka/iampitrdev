@@ -10,7 +10,7 @@ import { cn } from "@/utils/cn";
 
 export const ProjectsGridItem = ({ project }: { project: Project }) => {
   const [showLinks, setShowLinks] = useState<boolean>(false);
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     rootMargin: "-40% 0px -40% 0px",
   });
   const isMobile = useIsMobile();
