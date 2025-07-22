@@ -99,7 +99,7 @@ export default function Navigation() {
               <li key={item.scrollToId}>
                 <button
                   className={cn(
-                    "hover:text-muted focus-visible:text-muted relative outline-0 before:transition-all before:duration-150 focus-within:-translate-y-0.5",
+                    "hover:text-muted focus-visible:text-muted relative outline-0 before:transition-all before:duration-150 focus-visible:-translate-y-0.5",
                     activeSection === item.scrollToId &&
                       "text-muted before:bg-accent cursor-default before:absolute before:bottom-0 before:h-[0.15rem] before:w-full",
                   )}
