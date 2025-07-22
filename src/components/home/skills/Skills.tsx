@@ -20,13 +20,14 @@ export default function Skills() {
           <span className="text-highlight">Tailwind CSS</span>. I also have
           experience with <span className="text-highlight">Svelte</span>,{" "}
           <span className="text-highlight">MongoDB</span>, and{" "}
-          <span className="text-highlight">Lua</span>. I'm passionate about
+          <span className="text-highlight">Lua</span>. I&#39;m passionate about
           learning new frameworks and tools, always seeking ways to{" "}
           <span className="text-highlight">write clean code</span>, improve{" "}
           <span className="text-highlight">user experience</span>, and build{" "}
           <span className="text-highlight">efficient</span> and{" "}
-          <span className="text-highlight">modern web applications</span>. I'm
-          not an expert yet. I'm still perfecting my skills every day!
+          <span className="text-highlight">modern web applications</span>.
+          I&#39;m not an expert yet. I&#39;m still perfecting my skills every
+          day!
         </p>
         <SkillsGrid />
       </div>

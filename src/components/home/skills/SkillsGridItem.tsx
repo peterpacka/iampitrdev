@@ -1,7 +1,6 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-
 import { Skill } from "@/data/skills";
 import Link from "next/link";
 import { useState } from "react";
