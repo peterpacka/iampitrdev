@@ -76,7 +76,7 @@ export default function Navigation() {
           "before:bg-navigation-border bg-background/50 backdrop-blur-lg before:absolute before:bottom-0 before:h-[0.15rem] before:w-full",
       )}
     >
-      <nav className="mx-auto flex max-w-[110rem] items-center justify-between px-6 py-4 max-sm:flex-col md:px-10 lg:px-12">
+      <nav className="mx-auto flex max-w-[110rem] items-center justify-between px-6 py-4 max-md:flex-col md:px-10 lg:px-12">
         <div className="flex w-full items-center justify-between">
           <button
             onClick={() => scrollToId("hero")}
@@ -94,7 +94,7 @@ export default function Navigation() {
           />
         </div>
         {visibleMenu && (
-          <ul className="flex items-center gap-x-8 gap-y-4 text-2xl max-sm:mt-5 max-sm:flex-col max-sm:text-center">
+          <ul className="flex items-center gap-x-8 gap-y-4 text-2xl max-md:mt-5 max-md:flex-col max-md:text-center">
             {navItems.map((item) => (
               <li key={item.scrollToId}>
                 <button
