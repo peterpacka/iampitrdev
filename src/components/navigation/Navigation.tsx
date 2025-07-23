@@ -72,7 +72,7 @@ export default function Navigation() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 z-50 min-h-[4rem] w-full before:w-0 before:transition-transform before:duration-500",
+        "fixed top-0 left-0 z-50 min-h-[4rem] w-full before:w-0 before:transition-all before:duration-500",
         showBorder &&
           "before:bg-navigation-border bg-background/50 backdrop-blur-lg before:absolute before:bottom-0 before:h-[0.15rem] before:w-full",
       )}
