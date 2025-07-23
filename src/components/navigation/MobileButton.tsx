@@ -9,11 +9,7 @@ interface Props {
 
 export const MobileButton = ({ onClick, opened }: Props) => {
   return (
-    <button
-      className="flex size-[48px] items-center justify-center md:hidden"
-      onClick={onClick}
-      aria-label={opened ? "Close menu" : "Open menu"}
-    >
+    <button onClick={onClick} aria-label={opened ? "Close menu" : "Open menu"}>
       <svg width="48" height="48" viewBox="0 0 48 48">
         <motion.line
           x1="12"

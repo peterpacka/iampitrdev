@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Roboto } from "next/font/google";
 import "@/styles/globals.css";
 import Script from "next/script";
+import { ThemeProvider } from "next-themes";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -48,9 +49,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${roboto.className} antialiased`}>
-        {children}
+        <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
         <Script
           defer
           src="https://static.cloudflareinsights.com/beacon.min.js"

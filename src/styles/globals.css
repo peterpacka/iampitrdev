@@ -1,18 +1,18 @@
 @import "tailwindcss";
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-/* :root {
-  /* Light theme colors */
-/* --background: #ebecee; /* Very light gray instead of pure white */
-/* --foreground: #0a0f1f; Dark navy for text on light bg */
-/* --navigation-border: #d8d8d8; */
-/* --accent: #3d8bff; Bright blue accent */
-/* --secondary: #1b6cf9; Deeper blue for hover */
-/* --highlight: #f89900; Warm orange for CTA */
-/* --muted: #4a6078; Muted gray-blue for secondary text */
-/* } */
-
-/* @media (prefers-color-scheme: dark) { */
 :root {
+  /* Light theme colors */
+  --background: #dfdfdf; /* Very light gray instead of pure white */
+  --foreground: #0a0f1f; /* Dark navy for text on light bg */
+  --navigation-border: #cecece;
+  --accent: #3282fc; /* Bright blue accent */
+  --secondary: #1b6cf9; /* Deeper blue for hover */
+  --highlight: #008ada; /* Warm orange for CTA */
+  --muted: #55575a; /* Muted gray-blue for secondary text */
+}
+
+[data-theme="dark"] {
   /* Dark theme colors */
   --background: #0a0f1f; /* Dark navy background */
   --foreground: #e0e6ed; /* Light gray text */
@@ -22,7 +22,6 @@
   --highlight: #0f66ca; /* Warm orange for CTA */
   --muted: #b0becf; /* Muted gray-blue for secondary text */
 }
-/* } */
 
 @theme {
   --color-background: var(--background);

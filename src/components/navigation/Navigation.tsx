@@ -5,6 +5,7 @@ import { cn } from "@/utils/cn";
 import { MobileButton } from "./MobileButton";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import { useNavigation } from "./NavigationContext";
+import { ThemeSwitchButton } from "./ThemeSwitchButton";
 
 interface NavItem {
   name: string;
@@ -71,7 +72,7 @@ export default function Navigation() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 z-50 min-h-[4rem] w-full before:w-0 before:transition-all before:duration-500",
+        "fixed top-0 left-0 z-50 min-h-[4rem] w-full before:w-0 before:transition-transform before:duration-500",
         showBorder &&
           "before:bg-navigation-border bg-background/50 backdrop-blur-lg before:absolute before:bottom-0 before:h-[0.15rem] before:w-full",
       )}
@@ -85,13 +86,16 @@ export default function Navigation() {
             iam
             <span className="text-accent">pitr</span>
           </button>
-          <MobileButton
-            onClick={() => {
-              setShowMobileMenu((prev) => !prev);
-              setShowBorder(!showMobileMenu);
-            }}
-            opened={showMobileMenu}
-          />
+          <div className="flex items-center md:hidden">
+            <ThemeSwitchButton />
+            <MobileButton
+              onClick={() => {
+                setShowMobileMenu((prev) => !prev);
+                setShowBorder(!showMobileMenu);
+              }}
+              opened={showMobileMenu}
+            />
+          </div>
         </div>
         {visibleMenu && (
           <ul className="flex items-center gap-x-8 gap-y-4 text-2xl max-md:mt-5 max-md:flex-col max-md:text-center">
@@ -110,6 +114,9 @@ export default function Navigation() {
                 </button>
               </li>
             ))}
+            <li className="max-md:hidden">
+              <ThemeSwitchButton />
+            </li>
           </ul>
         )}
       </nav>

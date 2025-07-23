@@ -38,6 +38,7 @@ export default function Contact() {
                     className={cn(
                       "h-14",
                       social.name === "github" && "dark:invert",
+                      social.name === "pitr@iampitr.dev" && "not-dark:invert",
                     )}
                     src={social.img}
                     alt={social.name}
