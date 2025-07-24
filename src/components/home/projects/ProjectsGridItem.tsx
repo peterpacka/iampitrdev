@@ -43,7 +43,7 @@ export const ProjectsGridItem = ({ project }: { project: Project }) => {
             <img
               src={project.img}
               alt={project.name}
-              className="h-full object-cover"
+              className="h-full w-full object-cover"
               draggable={false}
             />
             <AnimatePresence>
