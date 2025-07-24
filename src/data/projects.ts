@@ -36,7 +36,8 @@ export const projects: Project[] = [
   {
     img: "/static/projects/quotes.png",
     name: "quotes",
-    description: "Brightens your mood with a random feel-good quote.",
+    description:
+      "Brightens your mood with a random feel-good quote. Build with React + Vite.",
     technologies: ["Vite", "React", "Tailwind CSS", "Motion"],
     github: "https://github.com/peterpacka/quotes.iampitrproject.xyz",
     live: "https://quotes.iampitrproject.xyz",
