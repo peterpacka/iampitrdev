@@ -87,7 +87,7 @@ export default function Navigation() {
             <span className="text-accent">pitr</span>
           </button>
           <div className="flex items-center md:hidden">
-            <ThemeSwitchButton />
+            {isMobile && <ThemeSwitchButton />}
             <MobileButton
               onClick={() => {
                 setShowMobileMenu((prev) => !prev);
@@ -114,9 +114,11 @@ export default function Navigation() {
                 </button>
               </li>
             ))}
-            <li className="max-md:hidden">
-              <ThemeSwitchButton />
-            </li>
+            {!isMobile && (
+              <li>
+                <ThemeSwitchButton />
+              </li>
+            )}
           </ul>
         )}
       </nav>

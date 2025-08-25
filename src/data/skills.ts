@@ -50,4 +50,9 @@ export const skills: Skill[] = [
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
     link: "https://nodejs.org/",
   },
+  {
+    name: "Prisma",
+    img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg",
+    link: "https://prisma.io/",
+  },
 ];
