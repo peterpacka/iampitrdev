@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { Skill } from "@/data/skills";
 import Link from "next/link";
 import { useState } from "react";
+import { cn } from "@/utils/cn";
 
 export const SkillsGridItem = ({ skill }: { skill: Skill }) => {
   const [showName, setShowName] = useState<boolean>(false);
@@ -21,7 +22,10 @@ export const SkillsGridItem = ({ skill }: { skill: Skill }) => {
     >
       <img
         draggable={false}
-        className="h-16 md:h-18 lg:h-20"
+        className={cn(
+          "h-16 md:h-18 lg:h-20",
+          skill.invertColors && "dark:invert",
+        )}
         src={skill.img}
         alt={skill.name}
       />

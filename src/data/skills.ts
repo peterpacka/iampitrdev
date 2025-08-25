@@ -2,6 +2,7 @@ export interface Skill {
   name: string;
   img: string;
   link: string;
+  invertColors?: boolean;
 }
 
 export const skills: Skill[] = [
@@ -54,5 +55,6 @@ export const skills: Skill[] = [
     name: "Prisma",
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg",
     link: "https://prisma.io/",
+    invertColors: true,
   },
 ];
