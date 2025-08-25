@@ -28,10 +28,10 @@ export const projects: Project[] = [
   {
     img: "/static/projects/iampitrproject.png",
     name: "iampitrproject",
-    description: "A personal website for my side projects and experiments.",
+    description:
+      "A previous personal website for my side projects and experiments.",
     technologies: ["Next.js", "Tailwind CSS", "Motion"],
     github: "https://github.com/peterpacka/iampitrproject.xyz",
-    live: "https://iampitrproject.xyz",
   },
   {
     img: "/static/projects/quotes.png",
